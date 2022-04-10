@@ -6,20 +6,13 @@
 비빔밥X오픈스택 스터디 블로그
 ==============================================
 
-.. toctree::
+.. toctree:
    :maxdepth: 2
-   :caption: Contents:
+   :caption: 스터디 소개
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Test
+   introduce/index.rst
+   
 
-   A/a.rst
-   B/b.rst
-
-
-
-Indices and tables
 ==================
 
 * :ref:`genindex`
