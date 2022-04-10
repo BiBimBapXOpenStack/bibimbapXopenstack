@@ -7,7 +7,7 @@ on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches:
-      - master
+      - refs/heads/master
   pull_request:
     branches:
       - master
@@ -39,7 +39,7 @@ jobs:
           -H "Authorization: Token $TOKEN" $BUILD_URL
           
       - name: Send RTD build trigger API on push
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: |
           curl \
           -X POST \
