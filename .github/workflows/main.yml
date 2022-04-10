@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TOKEN : ${{secrets.RTD_TOKEN}}
-      BUILD_URL : ${{secrets.RTD_BUILD_TRIGGER_API}}
+      BUILD_URL : ${{secrets.RTD_BUILD_TRIGGER_URL}}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
