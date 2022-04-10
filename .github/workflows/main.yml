@@ -30,7 +30,7 @@ jobs:
       
      # RTD build trigger
       - name: Send RTD build trigger API
-        if: ( github.event_name == 'push' && ${GITHUB_REF} == 'master' ) || ( github.event_name == 'pull_request' && github.event.pull_request.merged == 'true' )
+        if: ( github.event_name == 'push' && github.ref == 'master' ) || ( github.event_name == 'pull_request' && github.event.pull_request.merged == 'true' )
         run: |
           curl \
           -X POST \
