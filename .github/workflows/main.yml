@@ -38,7 +38,7 @@ jobs:
           -X POST \
           -H "Authorization: Token $TOKEN" $BUILD_URL
           
-      - name: Send RTD build trigger API on pull request
+      - name: Send RTD build trigger API on push
         if: github.event_name == 'push'
         run: |
           curl \
