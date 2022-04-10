@@ -6,7 +6,7 @@ name: DOC
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master ]
+    branches: master
   pull_request:
     branches: [ master ]
 
@@ -30,7 +30,7 @@ jobs:
       
      # RTD build trigger
       - name: Send RTD build trigger API
-        if: github.event_name == 'pull_request' && github.event.action == 'closed'
+        if: ( github.event_name == 'push' && ${GITHUB_REF} == 'master' ) || ( github.event_name == 'pull_request' && github.event.pull_request.merged == 'true' )
         run: |
           curl \
           -X POST \
