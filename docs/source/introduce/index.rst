@@ -7,7 +7,7 @@
 
    tutor.rst
 
-.. toctoree::
+.. toctree::
    :maxdepth: 1
    :caption: 스터디원 소개
 
