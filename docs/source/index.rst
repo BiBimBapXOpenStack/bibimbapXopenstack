@@ -14,6 +14,9 @@
    :maxdepth: 2
    :caption: Test
 
+   A/a.rst
+   B/b.rst
+
 
 
 Indices and tables
