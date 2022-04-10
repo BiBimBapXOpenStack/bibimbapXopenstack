@@ -33,4 +33,4 @@ jobs:
         run: |
           curl \
           -X POST \
-          -H "Authorization: Token $TOKEN" $BUILD_URL
+          -H "Authorization: Token 8ec3786d9604a404aec7305085e1a9e9ca016e5c" https://readthedocs.org/api/v3/projects/bibimbapxopenstack/versions/latest/builds/
