@@ -28,12 +28,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       
-     # Install JQ
-      - name: Install jq 
-      - run: |
-          apt-get update && \
-          apt-get install -y jq
-        
      # RTD build trigger
       - name: Send RTD build trigger API
         run: |
