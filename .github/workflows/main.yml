@@ -8,10 +8,10 @@ on:
   push:
     branches:
       - master
-  pull_request:
-    types: [closed]
-    branches:
-      - master
+#   pull_request:
+#     types: [closed]
+#     branches:
+#       - master
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -32,12 +32,12 @@ jobs:
       - uses: actions/checkout@v3
       
      # RTD build trigger
-      - name: Send RTD build trigger API on pull request
-        if: github.event_name == 'pull_request' && github.event.pull_request.merged == 'true'
-        run: |
-          curl \
-          -X POST \
-          -H "Authorization: Token $TOKEN" $BUILD_URL
+#       - name: Send RTD build trigger API on pull request
+#         if: github.event_name == 'pull_request' && github.event.pull_request.merged == 'true'
+#         run: |
+#           curl \
+#           -X POST \
+#           -H "Authorization: Token $TOKEN" $BUILD_URL
           
       - name: Send RTD build trigger API on push
         if: github.event_name == 'push'
