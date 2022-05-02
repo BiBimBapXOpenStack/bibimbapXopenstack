@@ -13,3 +13,9 @@
 
    tutee.rst
 
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Test
+
+   test.rst
