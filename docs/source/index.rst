@@ -12,6 +12,15 @@
 
    introduce/index
    
+.. toctree::
+   :maxdepth: 2
+   :caption: 팀별 게시판
+
+   team1/index.rst
+   team2/index.rst
+   team3/index.rst
+   team4/index.rst
+   
 
 이 페이지에서 검색
 ==================
