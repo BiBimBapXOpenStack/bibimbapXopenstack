@@ -1,13 +1,17 @@
 # This is a basic workflow to help you get started with Actions
 
-name: DOC
+name: CI
 
 # Controls when the workflow will run
 on:
+  workflow_run:
+    workflows: ["BUILD_PRECHECK"]
+    types:
+      - completed
   # Triggers the workflow on push or pull request events but only for the master branch
-  push:
-    branches:
-      - master
+#  push:
+#    branches:
+#      - master
 #   pull_request:
 #     types: [closed]
 #     branches:
@@ -22,7 +26,6 @@ jobs:
   SEND_BUILD_TRIGGER_API:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    if: ${{ contains(github.event.head_commit.message, '[CI]') }}
     env:
       TOKEN : ${{secrets.RTD_TOKEN}}
       BUILD_URL : ${{secrets.RTD_BUILD_TRIGGER_URL}}
@@ -30,16 +33,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-      
-     # RTD build trigger
-#       - name: Send RTD build trigger API on pull request
-#         if: github.event_name == 'pull_request' && github.event.pull_request.merged == 'true'
-#         run: |
-#           curl \
-#           -X POST \
-#           -H "Authorization: Token $TOKEN" $BUILD_URL
-          
+      - uses: actions/checkout@v3  
       - name: Send RTD build trigger API on push
 #         if: github.event_name == 'push'
         run: |
