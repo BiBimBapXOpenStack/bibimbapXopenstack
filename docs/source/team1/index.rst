@@ -1,4 +1,4 @@
-index.rst
+TEAM 1
 ==========
 
 .. toctree::
