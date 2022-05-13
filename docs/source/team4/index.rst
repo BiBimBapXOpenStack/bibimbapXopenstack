@@ -1,4 +1,4 @@
-TEAM4
+TEAM 4
 ==========
 
 .. toctree::
