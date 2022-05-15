@@ -18,7 +18,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build_check_on_push:
-    if: ${{ contains(github.event.head_commit.message, '[CHECK]') }}
+    if: ${{ contains(github.event.head_commit.message, '[BUILD]') }}
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
