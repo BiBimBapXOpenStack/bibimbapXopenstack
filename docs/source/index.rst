@@ -2,6 +2,7 @@
    sphinx-quickstart on Sun Apr 10 22:58:42 2022.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
+   test
 
 비빔밥X오픈스택 스터디 블로그
 ==============================================
