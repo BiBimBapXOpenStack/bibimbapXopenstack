@@ -55,21 +55,45 @@
 
 - github repository로 들어와 pr을 생성해줍니다
 
+.. image:: images/enter_pull_request.png
+  :width: 1000
+
+
 - pull request 본문에는 작업한 내용들을 리스트로 작성해줍니다.
 
+.. image:: images/write_pull_request.png
+  :width: 1000
+
 - 이후 pull request를 생성한 뒤 build_check가 모두 이루어질 때까지 기다립니다.
+
+.. image:: images/wait_build_check.png
+  :width: 1000
 
 5-1. build_check 성공시
 -----------------------------------------------------------
 
 - merge 는 스터디 관리자분들이 진행하기 때문에 여기까지 하시면 완료압니다.
 
+.. image:: images/success_build_check.png
+  :width: 1000
+
+- 사용이 완료된 branch는 github에서 삭제해주시면 감사하겠습니다.
+
 5-1. build_check 실패시
 -----------------------------------------------------------
 
+.. image:: images/failure_build_check.png
+  :width: 1000
+
 - 빌드 체크에 실패할 경우 detail 버튼을 통해 빌드 상세 정보로 들어갑니다
 
+.. image:: images/failure_detail.png
+  :width: 1000
+
 - 내리다보면 에러가 뜬 부분이 있을텐데 참고하셔서 수정하시면 됩니다
+
+.. image:: images/failure_detail2.png
+  :width: 1000
 
 - 빌드 테스트에 통과하지 못한 pull request는 merge없이 close 해주시면 됩니다
 
