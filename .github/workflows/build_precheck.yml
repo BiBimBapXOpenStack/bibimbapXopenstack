@@ -29,7 +29,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name : test log
-        run : echo "${{toJSON(github.event.head_commit.message)}}"
+        run : |
+          echo "${{toJSON(github.event.head_commit.message)}}"
+          echo "${{github.event_name}}"
       
       - name: Set up Python
         uses: actions/setup-python@v2
