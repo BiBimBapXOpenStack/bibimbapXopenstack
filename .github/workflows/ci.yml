@@ -9,8 +9,9 @@ name: CI
 #     types:
 #       - completed
 on:
-  pull_request:
-    types: [closed]
+  push:
+    branches:
+      - master
   # Triggers the workflow on push or pull request events but only for the master branch
 #  push:
 #    branches:
