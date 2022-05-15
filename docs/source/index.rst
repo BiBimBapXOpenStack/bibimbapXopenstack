@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 비빔밥X오픈스택 스터디 블로그
-==============================================
+===============
 
 .. toctree::
    :maxdepth: 2
