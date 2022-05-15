@@ -3,11 +3,14 @@
 name: CI
 
 # Controls when the workflow will run
+# on:
+#   workflow_run:
+#     workflows: ["BUILD_PRECHECK"]
+#     types:
+#       - completed
 on:
-  workflow_run:
-    workflows: ["BUILD_PRECHECK"]
-    types:
-      - completed
+  pull_request:
+    types: [closed]
   # Triggers the workflow on push or pull request events but only for the master branch
 #  push:
 #    branches:
@@ -24,6 +27,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   SEND_BUILD_TRIGGER_API:
+    if: github.event.pull_request.merged == 'true'
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     env:
