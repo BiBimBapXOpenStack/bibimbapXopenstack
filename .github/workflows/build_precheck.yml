@@ -17,8 +17,32 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build_check:
-    if: github.event_name == 'pull_request' || ${{ contains(github.event.head_commit.message, '[CHECK]') }}
+  build_check_on_push:
+    if: github.event_name == 'push' && ${{ contains(github.event.head_commit.message, '[CHECK]') }}
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+        
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          sudo apt install tox
+      - name: Test with Tox
+        run: tox
+        
+        
+  build_check_on_pr:
+    if: github.event_name == 'pull_request'
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
